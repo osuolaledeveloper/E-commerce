@@ -1,0 +1,38 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    padding-top: 100px;
+    font-weight: 800;
+    background-image:  linear-gradient(to bottom, yellow, lightyellow, );
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+form{
+    padding: 20px;
+}
+#border{
+    border: 1px solid transparent;
+    height: auto;
+    max-width: 48%;
+    margin: auto auto;
+    box-shadow: 5px 10px #888888;
+
+}
+
+input[type = checkbox]{
+    padding: 10px;
+}
+input[type= submit]{
+    display: block;
+    background-color: black;
+    width: 100%;
+    color: white;
+    
+}
+h1{
+   
+    text-align: center;
+    font-weight: 900;
+    font-size: 20px;
+    padding-bottom :10px;
+}
+

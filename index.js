@@ -1,15 +1,11 @@
 const express = require('express')
 const app = express();
+const route = require('./Route/Route') 
 
-app.get("/", (req, res) => {
-    res.send("hello fffform index.js")
-})
-app.get("/admin/signup", (req, res) =>{
-res.send("<h1> Login</h1>")
-})
+app.use(express.static('public'))
+app.set("view engine", "ejs")
 
-
-
+app.use(route)
 
 
 
