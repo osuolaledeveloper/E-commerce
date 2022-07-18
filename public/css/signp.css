@@ -1,6 +1,7 @@
 body{
     background-color: royalblue;
     font-family: "Courier, monospace";
+    box-sizing: border-box;
 }
 h6{
     letter-spacing: 0.5rem;
