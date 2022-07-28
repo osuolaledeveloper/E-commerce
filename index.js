@@ -1,11 +1,20 @@
 const express = require('express')
 const app = express();
 const route = require('./Route/Route') 
+const bodyparser = require("body-parser")
+const session  = require('cookie-session')
 const user = require("./db") 
+
+app.use(bodyparser.urlencoded({extended: true}))
 app.use(express.static('public'))
 app.set("view engine", "ejs")
-user.create({email: "bird of files"})
+
 app.use(route)
+app.use(session({keys: ["whdwvdfwvcwxju"]})); // session middleware
+app.use(require('flash')());
+ 
+
+
 
 
 

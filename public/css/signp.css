@@ -1,7 +1,14 @@
 body{
     background-color: royalblue;
     font-family: "Courier, monospace";
+    padding-top: 30px;
     box-sizing: border-box;
+
+}
+.card{
+    width: 350px ;
+    max-width:90%; 
+    margin: auto auto;
 }
 h6{
     letter-spacing: 0.5rem;
@@ -17,13 +24,14 @@ h5{
     padding-bottom: 30px;
 
 }
-p{
+#signin{
     text-align: center;
     padding: 20px;
 }
 
 .error{
-    font-size: 18px;
-    color: darkred;
+    font-size: 15px;
+    color: red;
+    padding: -10px;
 
 }

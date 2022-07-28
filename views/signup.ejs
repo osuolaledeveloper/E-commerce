@@ -10,55 +10,69 @@
     
     <title>Signup</title>
 </head>
-<body style="padding-top: 50px;">
-     <div  class="container">
-    
-    <div style="width: 350px ;max-width:90%; margin:auto auto;" class="card">
-                  
-<div class="container"> 
-      
-  <form style="padding-top:15px ;">
-    <h6> FLASH DATA</h6>
-    <h5> SIGN UP</h5>
+<body>
+ <div  class="container">
+  <div  class="card">                
+   <div class="container"> 
+    <form style="padding-top:15px;" method="post" action="/signup" >
+     <h6> FLASH DATA</h6>
+     <h5> SIGN UP</h5>
 
-      
-      <div class="input-group input-group-sm mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-          <input placeholder="Email" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-        </div>
+     <div class="input-group input-group-sm mb-3">
+       <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+       <input placeholder="Email" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="email" required>
+     </div>
+     <p class="error">
+      <% try { %> 
+       <%=  errors.mapped().email.msg  %>
+         <% } catch (error) { %>
+           <% } %>
+                 </p> 
       
    <div class="input-group input-group-sm mb-3">
       <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-key" aria-hidden="true"></i></span>
-      <input placeholder="Password" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      <input placeholder="Password" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="password" required> 
     </div>
     
+     <p class="error">
+     <% try { %> 
+     <%= errors.mapped().password.msg  %>
+        <% } catch (error) { %>
+          <% } %>
+                </p>
     <div class="input-group input-group-sm mb-3">
       <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-key" aria-hidden="true"></i></span>
-      <input placeholder="Re-type Password " type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      <input name="comfirmationPassword" placeholder="Re-type Password " type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
     </div>
+    
+    <p class="error">
+      <% try { %> 
+       <%=  errors.mapped().comfirmationPassword.msg  %>
+         <% } catch (error) { %>
+           <% } %>
+                 </p>
   
   <div class="input-group input-group-sm mb-3">
       <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-user" aria-hidden="true"></i></span>
-      <input placeholder="First name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      <input name="firstName" placeholder="First name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required> 
     </div>
-  
   <div class="input-group input-group-sm mb-3">
       <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-user" aria-hidden="true"></i></span>
-      <input placeholder="Last name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      <input  name="lastName" placeholder="Last name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
     </div>
     
   <div class="input-group input-group-sm mb-3">
       <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-phone" aria-hidden="true"></i></span>
-      <input placeholder="Phone Number" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      <input name="phoneNumber" placeholder="Phone Number" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
     </div> 
     <div class="input-group input-group-sm mb-3">
-    <input type="checkbox"> 
+    <input name="is" type="checkbox" required> 
     <span>I agree with terms and conditions</span>
  </div>
     <div class="input-group input-group-sm mb-3">
     <input class="btn btn-primary" type="submit">
     </div>
-  <p>Already a member? <a href="/signin">Sign In</a></p> 
+  <p id="signin">Already a member? <a href="/signin">Sign In</a></p> 
 
   </form>
 </div>
