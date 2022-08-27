@@ -4,6 +4,7 @@ const {validationResult ,body} = require('express-validator');
 const user = require("../db")
 const {email, password, confirmationPassword, firstNmae, lastNmae, phoneNumber} = require('../validator')
 const crypto = require('crypto');
+const request = require('request');
 
 
 router.get('/', (req, res) => {
@@ -98,6 +99,24 @@ router.get('/dashboard', (req, res) => {
 })
   router.get('/topup/airtime', (req, res) => {
     res.render('airtime')
+  })
+  router.post('/topup/airtime', (req, res) => {
+    console.log(req.body)
+    request(`https://vtu.ng/wp-json/api/v1/airtime?username=osuolale1998&password=bolaji@vtu56&phone=${req.body.phonenumber}&network_id=${req.body.airtime}&amount=${req.body.amount}`, function (error, response, body) {
+        if(error){
+            console.log(error)
+        }
+        else{
+           res.send(body)
+        }
+        
+      });
+ })
+
+  router.get('/admin/dashboard', async (req, res) => {
+    const users = await user.find({}).exec()
+    console.log(users)
+    res.render("admin", {users})
   })
 
 module.exports =  router

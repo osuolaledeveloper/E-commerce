@@ -1,10 +1,15 @@
+<style>
+  .container{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+</style>
 <%- include('partials/header.ejs') %>
   <div class="container">
     <h2 style="text-align: center; padding:20px">Buy VTU Airtime & Get Instant Discounts</h2>
     <hr>
     <div class="row">
         <div class="col-lg-6">
-            <form  action="">
+            <form  action="/topup/airtime" method="post">
                 <label for="network">Network <span style="color: red;">*</span></label>
                 <select class="form-control" name="airtime" id="network">
                     <option value="">Choose a Network</option>
@@ -18,7 +23,7 @@
                <label for="">Amount <span style="color: red;">*</span></label>
                 <input  class="form-control" type="number" name="amount" placeholder="ammount" required>
                 <div style="padding: 10px;"> </div>
-                <button  class="btn btn-lg btn-success">Continue</button>  
+                <button  class="btn btn-lg btn-primary">Continue</button>  
             </form>
         </div>
         <div class="col-lg-6"
