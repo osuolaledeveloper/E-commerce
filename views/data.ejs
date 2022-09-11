@@ -1,0 +1,137 @@
+<style>
+    .container{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+  </style>
+  <%- include('partials/header.ejs') %>
+    <div class="container">
+      <h2 style="text-align: center; padding:20px">Buy/Resell Cheap Data Bundles Online - Instant Delivery!</h2>
+      <hr>
+      <div class="row">
+          <div class="col-lg-6">
+              <form  action="/topup/airtime" method="post">
+                  <label for="networks">Choose a Network <span style="color: red;">*</span></label>
+                  <select class="form-control" name="airtime" id="networks">
+                      <option value="network">Choose a Network</option>
+                      <option value="mtn">Mtn</option>
+                      <option value="airtel">Airtel</option>
+                      <option value="glo">Glo</option>
+                      <option value="etisalat">9mobile</option>
+                  </select>
+                  <label for="network">Data plan<span style="color: red;">*</span></label>
+
+                  <select class="form-control" name="airtime" id="networka">
+                    <option value="network">Choose data plane</option>   
+                    <option value="airt-500">750MB – 14 Days</option>
+                    <option value="airt-300x">1GB – 1 Day</option>
+                    <option value="AIR1000">1.5GB – 30 Days</option>
+                    <option value="airt-500x">2GB – 2 Days</option>
+                    <option value="airt-1200">2GB – 30 Days</option>
+                    <option value="Air1500">3GB – 30 Days</option>
+                    <option value="AIR2000 ">4.5GB – 30 Days</option>
+                    <option value="airt-1500-2">6GB – 7 Days </option>
+                    <option value="Air3000">10GB – 30 Days
+                    <option value="Air5000"> 20GB – 30 Days</option>
+                    <option value="Air100000">40GB – 30 Days </option> 
+                    <option value="500">500MB – 30 Days</option>
+                    <option value="M1024">1GB – 30 Days</option>
+                    <option value="M2024">2GB – 30 Days></option>
+                    <option value="3000">3GB – 30 Days</option>
+                    <option value="5000">5GB – 30 Days</option>
+                    <option value="10000"> 10GB – 30 Days</option>
+                    <option value="mtn-20hrs-1500">6GB – 7 Days</option>
+                    <option value="mtn-30gb-8000">Data 30GB – 30 Days</option>
+                    <option value="mtn-40gb-10000">40GB – 30 Days</option>
+                    <option value="mtn-75gb-15000">75GB – 30 Days</option>
+                    <option value="glo100x">1GB – 5 Nights></option>
+                    <option value="glo200x">1.25GB – 1 Day (Sunday)</option>
+                    <option value="G500">1.35GB – 14 Days</option>
+                    <option value="G2000">5.8GB – 30 Days</option>
+                    <option value="G1000">2.9GB – 30 Days</option>
+                    <option value="G2500"> 7.7GB – 30 Days</option>
+                    <option value="G3000">10GB – 30 Days</option>
+                    <option value="G4000">13.25GB – 30 Days</option>
+                    <option value="G5000">18.25GB – 30 Days</option>
+               <option value="G8000">29.5GB – 30 Days</option>
+               <option value="glo10000">50GB – 30 Days</option>
+              <option value="9MOB1000">1GB – 30 Days</option>
+ <option value="9MOB34500"> 2.5GB – 30 Days </option>
+  <option value="9MOB8000">11.5GB – 30 Days </option>
+   <option value="9MOB5000"> 15GB – 30 Days</option>
+                </select>
+                <a  style="display: block; padding-top:10px;"  href="#">Clear</a>
+
+    
+                <hr>
+                  <label for="">Phone Number  <span style="color: red;">*</span></label>
+                  <input class="form-control" type="text" name="phonenumber" placeholder="Phone Number" required>
+          
+                  <div style="padding: 10px;"> </div>
+                  <button  class="btn btn-lg btn-primary">Continue</button>  
+              </form>
+          </div>
+          <div class="col-lg-6"
+          ></div>
+      </div>
+     <hr>
+     <p>
+      Buy/Resell Airtime Online at Discount Prices for all Mobile Networks (MTN, Glo, Airtel & 9mobile) in Nigeria. Buy Recharge Card PINS Online. Instant Delivery!</p>
+    </div>
+    irt-500 = Airtel Data 
+    airt-300x = Airtel Data 
+    AIR1000 = Airtel Data 
+    airt-500x = Airtel Data 
+    airt-1200 = Airtel Data 
+    Air1500 = Airtel Data 
+    AIR2000 = Airtel Data 
+  
+  <%- include('partials/footer.ejs') %>
+  <script>
+
+    
+ const network =  document.querySelector("#networks")
+ network.addEventListener("click", (event) => {
+  if(network.value === "airtel"){
+console.log(" you have selected mtn")
+const networks =  document.querySelector("#networka")
+  for(i = 0; i < 12; i++){
+    console.log(networks.options[i])
+    networks.options.style.display = "none"
+
+    networks.options[i].style.display = "block"
+
+   }
+  }
+  if(network.value === "mtn"){
+    console.log(" you have selected mtn")
+    const networks =  document.querySelector("#networka")
+      for(i = 12; i < 22; i++){
+        console.log(networks.options[i])
+       }
+      }
+      if(network.value === "glo"){
+        console.log(" you have selected mtn")
+        const networks =  document.querySelector("#networka")
+          for(i = 22; i < 30; i++){
+            console.log(networks.options[i])
+           }
+          }
+          if(network.value === "etisalat"){
+            console.log(" you have selected mtn")
+            const networks =  document.querySelector("#networka")
+              for(i = 33; i < 37; i++){
+                networks.options[i].style.display = "none"
+                
+               }
+              }
+
+          
+          
+          
+  
+ })
+ 
+
+</script>
+
+  

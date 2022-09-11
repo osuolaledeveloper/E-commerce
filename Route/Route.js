@@ -119,4 +119,7 @@ router.get('/dashboard', (req, res) => {
     res.render("admin", {users})
   })
 
+  router.get('/topup/data', (req, res) => {
+    res.render("data")
+  })
 module.exports =  router
